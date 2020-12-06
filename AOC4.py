@@ -2,9 +2,7 @@ with open("inputData.txt", "r") as f:
     data =(f.read())
 data = data.split("\n\n")
 
-def check1(str):
-    pass
-def check2(str):
+def check(str):
     temp =str.split()
     temp = sorted(temp)
     field = 0
@@ -87,6 +85,7 @@ def check2(str):
         return True
     else:
         return False
+    
 def sol1(data):
     ans = 0
     for x in data:
@@ -100,13 +99,15 @@ def sol1(data):
         else:
             continue
     return ans
+
 def sol2(data):
     ans = -1
     for x in data:
         if len(x) ==0:
             continue
-        if check2(x):
+        if check(x):
             ans+=1
     return ans
+
 print("Part 1:",sol1(data))
 print("Part 2:",sol2(data))
